@@ -48,7 +48,7 @@ Is possible to send through the file more than one message, it's only needed to 
   
   I added some checks for the lenght of the message, since they should be pair of p and v I decided that If the content lenght is an odd number that means that a volume is missing, therefore I just don't consider the last price and I make the content lenght even.
   
- ## CONNECTION B WITH A DOESN'T INTERFERE WITH CONNECTION TO THE SERVER
+ ### REQUEST: CONNECTION B WITH A DOESN'T INTERFERE WITH CONNECTION TO THE SERVER
  
  In order to achieve this I used two thread, one for reading from the pipeline (stdin) and one to read and send to the SERVER. In this way getting a message from A doesn't block receiving or sending message to the SERVER.
   
