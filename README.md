@@ -6,4 +6,6 @@ Application that connect 4 components.
 [ TERMINAL 1 ] -> [ A ] -> [ B ] <-> [ SERVER ]
 
 After downloading the folder, just run : 
-''' make '''
+```
+make
+```
