@@ -14,6 +14,7 @@
 
 #define PORT 8080
 #define SO 14 // SHIFT OUT 
+#define LINES 4096
 
 struct Entry
 {
@@ -40,7 +41,7 @@ int main()
 
     int sock = 0, valread, client_fd;
 	struct sockaddr_in serv_addr;
-	char buffer[4096] = { 0 };
+	char buffer[LINES] = { 0 };
 	if ((sock = socket(AF_INET, SOCK_STREAM, 0)) < 0) {
 		printf("\n ERROR SOCKET \n");
 	}
@@ -179,7 +180,7 @@ void clientB_read_from_server(int sock, char buffer[], int client_fd)
 {    
 	while(1)
 	{
-		int valread = read(sock, buffer, 4096);
+		int valread = read(sock, buffer, LINES);
 		std::cout << buffer << std::flush;
 		
     }
