@@ -22,9 +22,9 @@ nc -l 8080
 ```
 
 Since some character are not printable ( 1 - 32 unsigned chart ) I decided to include also an out.txt file so that opening it with NotePad++ and using the HEX plugin is possible to see which is the decimal correspondant to check the correctness of the results.
-'''
+```
 nc -l 8080 > out.txt
-'''
+```
 to redirect the output.  
 
 [TERMINAL 3 ] :  
