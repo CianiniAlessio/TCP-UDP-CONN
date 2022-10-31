@@ -28,20 +28,20 @@ Run in the terminal:
 ./A | ./B
 ```
 
-Now the SERVER and A are connected to B with 2 different approach ( STDIN AND TCP ).
+Now the SERVER and A are connected to B with 2 different approach ( STDIN AND TCP ).  
 
-[PORT 8081]
-[ TERMINAL 1] :
+[PORT 8081]  
+[ TERMINAL 1] :  
 
-I need to send through UDP connection messages to A therefore in the terminal I run this command:
+I need to send through UDP connection messages to A therefore in the terminal I run this command:  
 
 ```
 nc -w 1 -u localhost 8081 < input.txt
 ```
 
-Wich will send the content of input.txt to A.
-The content will be sent in the stdoutput so B can read through the PIPELINE as stdinput.
-B then will evaluate the content, if the unsigned char is 10 that means LINE FEED therefore I evaluate the parameters passed until now.
+Wich will send the content of input.txt to A.  
+The content will be sent in the stdoutput so B can read through the PIPELINE as stdinput.  
+B then will evaluate the content, if the unsigned char is 10 that means LINE FEED therefore I evaluate the parameters passed until now.  
 Is possible to send through the file more than one message, it's only needed to separate the messages with 10s as in the input.txt file that I uploaded as test.
 
 
