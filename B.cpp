@@ -88,24 +88,29 @@ void checking_price_and_sending_to_server(std::vector<Entry> entries, int sock)
 	
 
     for(Entry& e: entries)
-    {
-		unsigned char * c = (unsigned char*)malloc(5 * sizeof(unsigned char));
-		if(e.price > 80)
-		{            
-				//memset((const void *)c, e.price, sizeof(c) * sizeof(unsigned char))
-				for(int a = 0;a < 5;a++)
-				{
-					c[a] = e.price;				
-				}
-				// IF I OUTPUT IN A TEXT FILE LIKE out.txt AND USING THE PLUGIN OF NOTEPAD FOR THE HEX IT'S POSSIBLE TO READ THE DATA, OTHERWISE IN THE 
-				// TERMINAL ARE MOSTLY UNREADABLE CHARACTER.
-
-		    		send(sock, (const void*)c, 5 * sizeof(unsigned char), 0);
-
-		}
+	{
 		
-		delete [] c;
-    }
+		
+        if(e.price > 80)
+        {          
+			unsigned char * c = (unsigned char*)malloc(5 * sizeof(unsigned char));
+			//unsigned char * c = new unsigned char[5];
+			for(int a = 0;a < 5;a++)
+			{
+				c[a] = e.price;				
+			}
+		
+
+			// IF I OUTPUT IN A TEXT FILE LIKE out.txt AND USING THE PLUGIN OF NOTEPAD FOR THE HEX IT'S POSSIBLE TO READ THE DATA, OTHERWISE IN THE 
+			// TERMINAL ARE MOSTLY UNREADABLE CHARACTER.
+
+            send(sock, (const void*)c, 5 * sizeof(unsigned char), 0);
+			delete[] c;
+			
+        }
+		
+		
+	}
 
 }
 
