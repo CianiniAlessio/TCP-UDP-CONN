@@ -1,6 +1,6 @@
 # TCP-UDP-CONN
 UDP - TCP APPLICATION C++ FOR LINUX UBUNTU.
-( Didn't try on mac, I suppose there would be the necessity to add some flags to the makefile).
+( Didn't try on mac but I know that on mac the UDP connection can create some problems).
 
 Application that connect 4 components.  
 
